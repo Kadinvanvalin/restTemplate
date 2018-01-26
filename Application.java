@@ -28,7 +28,7 @@ public class Application {
             public CommandLineRunner run(RestTemplate restTemplate) throws Exception{
         return args -> {
 
-            Quote quote = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+            Quote quote = restTemplate.getForObject("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en", Quote.class);
             log.info(quote.toString());
         };
     }
